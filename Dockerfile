@@ -18,5 +18,5 @@ RUN pip3 install apache-flink==2.0.0
 
 USER flink
 RUN mkdir /opt/flink/usrlib
-COPY flink_job.py /opt/flink/usrlib/flink_job.py
+COPY flink_jobs/flink_job.py /opt/flink/usrlib/flink_job.py
 COPY connectors/* /opt/flink/lib/
