@@ -1,0 +1,30 @@
+[project]
+name = "BakuRealTimeEstate"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Altun Baratli", email = "altunbaratli@gmail.com"},
+]
+dependencies = [
+    "kafka-python>=2.2.15",
+    "requests>=2.32.4",
+    "apache-flink>=2.0.0",
+]
+requires-python = "==3.11.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+    "black>=25.1.0",
+    "isort>=6.0.1",
+]
+
+[tool.pdm.scripts]
+fx = "python producers/fx_rate_producer.py"
+re = "python producers/real_estate_producer.py"
